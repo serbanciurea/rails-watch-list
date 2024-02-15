@@ -1,11 +1,21 @@
-<h1>Lists</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <%= image_tag "lewagon_logo.png", alt: "Le Wagon logo" %>
+      <h1 class="text-center">List of Movies</h1>
 
-<%= link_to 'New List', new_list_path %>
+      <ul class="list-group">
+        <% @lists.each do |list| %>
+          <li class="list-group-item">
+            <%= link_to list.name, list, class: "text-decoration-none" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="text-center mt-3">
+        <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,15 @@
-<h1><%= @list.name %></h1>
-
-<p><strong>Content:</strong> <%= @list.content %></p>
-<%= link_to 'Edit', edit_list_path(@list) %>
-  list_path(@list),
-%>
-
-<%= link_to 'Back to lists', lists_path %>
+<div class="container">
+  <div class="row vh-100 justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="text-center"><%= @list.name %></h1>
+        </div>
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <%= link_to 'Edit', edit_list_path(@list), class: "btn btn-primary" %>
+          <%= link_to 'Back to lists', lists_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

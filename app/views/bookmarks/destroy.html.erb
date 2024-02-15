@@ -1,2 +1,10 @@
-<h1>Bookmarks#destroy</h1>
-<p>Find me in app/views/bookmarks/destroy.html.erb</p>
+<h1>Bookmarks for <%= @list.name %></h1>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.movie.title %> <!-- Assuming bookmark has a `movie` association -->
+      <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
